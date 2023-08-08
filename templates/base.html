@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        .bg-image {
+            /* The image used */
+            background-image: url("/static/sand_timer.jpg");
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Position text in the middle of the page/image */
+        
+        .days-left {
+            background-color: rgba(191, 204, 226, 0.692);
+            /* Black w/opacity/see-through */
+            color: black;
+            font-weight: bold;
+            border: 15px solid black;
+            border-radius: 10px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .source {
+            position: absolute;
+            background-color: white;
+            bottom: 0px;
+            right: 0px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-image"></div>
+
+
+    <div class="source">
+        Picture from: <a href="https://wallpapercave.com/sand-timer-wallpaper">wallpapercave.com</a>
+    </div>
+    {% block percentage %} {% endblock %} {% block no_percentage %} {% endblock %}
+
+</body>
+
+</html>

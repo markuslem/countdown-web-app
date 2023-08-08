@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block no_percentage %}
+<div class="days-left">
+    <h3>Time left until:</h3>
+    <h1 id="date">{{ end_date }}</h1>
+    <h1 style="font-size:50px" , id="countdown">&#8205<br>&#8205</h1>
+</div>
+
+<script src="/static/time_to_date.js"></script>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block percentage %}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .percentage {
+            background-color: rgba(191, 204, 226, 0.692);
+            /* Black w/opacity/see-through */
+            color: black;
+            font-weight: bold;
+            border: 7px solid black;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 45%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        #bar {
+            width: 100%;
+            border-style: solid;
+        }
+        
+        #percentage-bar {
+            width: 0%;
+            height: 30px;
+            background-color: rgba(44, 19, 158, 0.678);
+        }
+        
+        @media only screen and (max-width: 900px) {
+            .percentage {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+
+
+<div class="days-left">
+    <h3>Time left until:</h3>
+    <h1 id="end_date">{{ end_date }}</h1>
+
+    <h1 style="font-size:50px" , id="countdown">&#8205<br>&#8205</h1>
+    </p>
+</div>
+
+<div class="percentage">
+    <p id="percentage">&#8205
+        <p hidden id="beginning_date">{{ beginning_date }}</p>
+    </p>
+    <div id="bar">
+        <div id="percentage-bar"></div>
+    </div>
+
+</div>
+<script src="/static/date_to_date.js"></script>
+{% endblock %}
